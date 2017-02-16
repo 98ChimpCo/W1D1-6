@@ -15,6 +15,7 @@ int main(int argc, const char * argv[]) {
      // 4 unit long array of characters
 
      int number;
+     char inputChars[255];
  //       char *message;
 
         NSLog (@"To type a message for Elham enter 1: \n ");
@@ -24,28 +25,33 @@ int main(int argc, const char * argv[]) {
         
      
         scanf ("%d", &number);
-        switch (number){
-            case 1:
-                NSLog (@"You asked to type a message for Elham");
-/*                printf("Enter your message: ");
-                scanf("%s", message);
-                printf("your message is: %s", message);*/
-                
-                break;
-            case 2:
-                NSLog (@"You asked to type a message for Shahin");
-                break;
-            case 3:
-                NSLog (@"You asked to type a message for Neela");
-                break;
-            case 4:
-                NSLog (@"You asked to type a message for Tasha");
-                break;
-                
-        }
-
         
-        // 1. This is how to output capitalize letter of a string
+    while (number>0 & number<5 )
+        {
+       if (number == 1){
+        
+                NSLog (@"You asked to type a message for Elham.\n Please enter your message now:");
+                fgets(inputChars, 255, stdin);
+                NSLog (@"You message is %s", inputChars);
+       }if (number == 2){
+                NSLog (@"You asked to type a message for Shahin.\n Please enter your message now:");
+                fgets(inputChars, 255, stdin);
+                NSLog (@"You message is %s", inputChars);
+       }if (number == 3){
+                NSLog (@"You asked to type a message for Neela.\n Please enter your message now:");
+                fgets(inputChars, 255, stdin);
+                NSLog (@"You message is %s", inputChars);
+       }else if (number == 4){
+                NSLog (@"You asked to type a message for Tasha.\n Please enter your message now:");
+                fgets(inputChars, 255, stdin);
+           
+       }
+            
+        }
+        
+        // This line is for the while loop to add. Not sure how to go back to top!
+        NSLog (@"Oops, you entered an invalid number. Try again");
+             // 1. This is how to output capitalize letter of a string
         NSString *sample = (@"Hello there!");
         NSLog(@"%@", [sample uppercaseString]);
         
@@ -73,27 +79,7 @@ int main(int argc, const char * argv[]) {
         
         // Remove punctuation
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      
          }
     return 0;
-}
+    }
